@@ -10,15 +10,40 @@
       background-color: black;
     }
 
+    #cronometro-container {
+      position: relative;
+      font-size: 0;
+    }
+
+    .texto-cronometro {
+      font-size: 20px;
+      color: white;
+      position: absolute;
+      margin-top: 100px;
+    }
+
+    #meses { left: 35%; }
+    #dias { left: 42%; }
+    #horas { left: 48%; }
+    #minutos { left: 54%; }
+    #segundos { left: 61%; }
+
     #cronometro {
       font-size: 90px;
-      margin-top: 90px;
+      margin-top: 50px;
     }
   </style>
 </head>
 
 <body>
-  <font color="white"><div id="cronometro">00:00:00</div></font>
+  <div id="cronometro-container">
+    <div id="meses" class="texto-cronometro">MESES</div>
+    <div id="dias" class="texto-cronometro">DIAS</div>
+    <div id="horas" class="texto-cronometro">HORAS</div>
+    <div id="minutos" class="texto-cronometro">MINUTOS</div>
+    <div id="segundos" class="texto-cronometro">SEGUNDOS</div>
+    <font color="white"><div id="cronometro">xx:xx:xx:xx:xx</div></font>
+  </div>
   <span style="font-size: 200px;"><font color="white">.  .</font></span>
 
   <script>
@@ -31,17 +56,23 @@
 
       if (diferenca < 0) {
         clearInterval(cronometro);
-        document.getElementById('cronometro').textContent = "00:00:00";
+        document.getElementById('cronometro').textContent = "00:00:00:00:00";
         return;
       }
 
-      let horas = Math.floor(diferenca / (1000 * 60 * 60));
-      let minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-      let segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+      let segundos = Math.floor(diferenca / 1000);
+      let minutos = Math.floor(segundos / 60);
+      let horas = Math.floor(minutos / 60);
+      let dias = Math.floor(horas / 24);
+      let meses = Math.floor(dias / 30);
 
-      
+      segundos %= 60;
+      minutos %= 60;
+      horas %= 24;
+      dias %= 30;
+
       document.getElementById('cronometro').textContent =
-        `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+        `${String(meses).padStart(2, '0')}:${String(dias).padStart(2, '0')}:${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
     }
 
     function iniciarCronometro() {
