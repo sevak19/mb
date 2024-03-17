@@ -14,11 +14,11 @@ body {
       margin-top: 100px;
     }
 
-    #meses { left: 25%; }
-    #dias { left: 35%; }
-    #horas { left: 46%; }
-    #minutos { left: 56%; }
-    #segundos { left: 67%; }
+    #meses { left: 35%; }
+    #dias { left: 42%; }
+    #horas { left: 48%; }
+    #minutos { left: 54%; }
+    #segundos { left: 61%; }
 
     #cronometro {
       font-size: 90px;
