@@ -37,3 +37,16 @@ body {
 
   }
 }
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  body{
+    text-align: center;
+
+    #meses { left: 5%; }
+    #dias { left: 26%; }
+    #horas { left: 45%; }
+    #minutos { left: 64%; }
+    #segundos { left: 84%; }
+  }
+
+
+}
