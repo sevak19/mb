@@ -25,7 +25,7 @@ body {
       margin-top: 50px;
     }
 }
-@media only screen and (max-width: 600px){
+@media only screen and (min-width: 388px) and (max-width: 600px){
   body {
     text-align: center;
   
@@ -49,4 +49,15 @@ body {
   }
 
 
+}
+@media only screen and (max-width: 388px){
+body{
+  text-align: center;
+
+    #meses { left: 3%; }
+    #dias { left: 30%; }
+    #horas { left: 60%; }
+    #minutos { left: 90%; }
+    #segundos { left: 120%; }
+}
 }
