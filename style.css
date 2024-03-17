@@ -26,8 +26,9 @@ body {
     }
 }
 @media only screen and (max-width: 600px){
-  body{
+  body {
     text-align: center;
+  }
     #meses { left: 3%; }
     #dias { left: 25%; }
     #horas { left: 48%; }
@@ -35,4 +36,3 @@ body {
     #segundos { left: 95%; }
 
   }
-}
