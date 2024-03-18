@@ -15,10 +15,15 @@ body {
     }
 
     #meses { left: 35%; }
+       font-size: 20px;
     #dias { left: 42%; }
-    #horas { left: 48%; }
+       font-size: 20px;
+    #horas { left: 48%; } 
+      font-size: 20px;
     #minutos { left: 54%; }
+       font-size: 20px;
     #segundos { left: 61%; }
+       font-size: 20px;
 
     #cronometro {
       font-size: 90px;
